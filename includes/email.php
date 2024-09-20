@@ -18,7 +18,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'jienseng0701@gmail.com';                     // SMTP username
-    $mail->Password   = 'twzbpccnzadizouo';                         // SMTP password
+    $mail->Password   = 'osah jwcx khmf itga';                         // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -89,9 +89,21 @@ try {
     </body>
     </html>";
 
+    $mail->SMTPDebug = 0; // SMTP Debug purposes: 0=>no display, 2=>display debug
+    $mail->Debugoutput = 'html'; // Outputs debug info in HTML
+
     $mail->send();
     echo "Confirmation email sent successfully.";
 } catch (Exception $e) {
     echo "Failed to send confirmation email. Error: {$mail->ErrorInfo}";
 }
+
+
+// Steps in configuring email:
+// 1. Google account setting => security
+// 2. Go to two step verification, then scroll down find app password
+// 3. Type in "PHPMailer", then copy the password and insert into line 21.
+// Eg.     $mail->Password   = 'osah jwcx khmf itga'; 
 ?>
+
+
